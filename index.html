@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ensina Chat - Website Estático</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="chat-app" role="application" aria-label="Chat de LLM">
+        <header class="chat-header">
+            <div class="brand">
+                <h1 class="title">Ensina Chat</h1>
+                <span class="subtitle">Qual a maneira mais didática de ensinar, senão uma conversa?</span>
+            </div>
+        </header>
+
+        <main class="chat-main" role="main">
+            <div id="messages-container" class="messages" aria-live="polite" aria-relevant="additions">
+                </div>
+            <div id="typing-indicator" class="message assistant typing" style="display: none;">
+                <div class="avatar"><span class="avatar-assistant">Assistente</span></div>
+                <div class="message-body">
+                    <div class="message-content typing-dots" aria-hidden="true">
+                        <span>.</span><span>.</span><span>.</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="chat-footer">
+            <form id="composer-form" class="composer" novalidate>
+                <textarea
+                    id="prompt"
+                    name="prompt"
+                    rows="1"
+                    class="input prompt"
+                    placeholder="Escreva sua mensagem..."
+                    required
+                    aria-label="Digite sua mensagem"
+                ></textarea>
+
+                <div class="composer-actions">
+                    <button
+                        type="button"
+                        id="stop-button"
+                        class="btn"
+                        disabled
+                        title="Parar geração"
+                        aria-label="Parar geração"
+                    >
+                        Parar
+                    </button>
+
+                    <button
+                        type="submit"
+                        id="send-button"
+                        class="btn primary"
+                        disabled
+                        title="Enviar"
+                        aria-label="Enviar mensagem"
+                    >
+                        Enviar
+                    </button>
+                </div>
+            </form>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
